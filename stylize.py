@@ -67,6 +67,7 @@ def stylize(network, initial, content, styles, iterations,
         image = tf.Variable(initial)
         net, _ = vgg.net(network, image)
 
+
         # content loss
         content_loss = content_weight * (2 * tf.nn.l2_loss(
                 net[CONTENT_LAYER] - content_features[CONTENT_LAYER]) /
@@ -110,7 +111,8 @@ def stylize(network, initial, content, styles, iterations,
         best_loss = float('inf')
         best = None
         with tf.Session() as sess:
-            sess.run(tf.initialize_all_variables())
+            #sess.run(tf.initialize_all_variables())
+            sess.run(tf.global_variables_initializer())
             for i in range(iterations):
                 last_step = (i == iterations - 1)
                 print_progress(i, last=last_step)
