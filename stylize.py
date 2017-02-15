@@ -1,4 +1,5 @@
 # Copyright (c) 2015-2016 Anish Athalye. Released under GPLv3.
+#Do some modification in line:113. Submitted by Lingfeng Lin. Fab 15, 2017. 
 
 import vgg
 
